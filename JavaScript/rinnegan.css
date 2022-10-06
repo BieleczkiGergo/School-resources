@@ -1,0 +1,33 @@
+
+/*
+colors:
+#120a1b ; #582f82 ; #402262 ; #ab9abc ; #c7b5cc ; 
+*/
+
+.main-title{
+    font-size: 100px;
+    color: azure;
+    text-align: center;
+
+}
+
+.title{
+    color: azure;
+    text-indent: 10%;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
+.rinnegan-bg{
+    background-color: #402262;
+
+}
+
+.main-content{
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+    display: block;
+    margin-left: 200px;
+
+}
