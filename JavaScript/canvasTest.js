@@ -165,7 +165,19 @@ let logos = [
         ctx.closePath();
         ctx.fill();
 
-        //ctx.beginPath();
+        ctx.beginPath();
+        let grad = ctx.createLinearGradient(x+40, y+15, x+40, y+85);
+        grad.addColorStop(0, "rgba(0, 0, 0, 0)");
+        grad.addColorStop(1, "rgba(0, 0, 0, 255)");
+        ctx.moveTo(x, y);
+        ctx.lineTo(x+40, y-15);
+        ctx.lineTo(x+80, y);
+        ctx.lineTo(x+80, y+70);
+        ctx.lineTo(x+40, y+85);
+        ctx.lineTo(x, y+70);
+        ctx.fillStyle = grad;
+        ctx.closePath();
+        ctx.fill();
     }
 ]
 
