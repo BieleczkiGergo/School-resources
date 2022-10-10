@@ -4,6 +4,12 @@ colors:
 #120a1b ; #582f82 ; #402262 ; #ab9abc ; #c7b5cc ; 
 */
 
+@font-face {
+    font-family: gang-of-three;
+    src: url(gang-of-three.ttf);
+
+}
+
 .main-title{
     font-size: 100px;
     color: azure;
@@ -31,3 +37,4 @@ colors:
     margin-left: 200px;
 
 }
+

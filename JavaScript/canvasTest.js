@@ -133,11 +133,27 @@ let logos = [
         ctx.closePath();
         ctx.stroke();
         
-
+        
     },
-
+    
     //7 = Draw sprite 8 (pylon)
+    //Biggest one yet
     (x, y) => {
+
+        let gradient2 = ctx.createLinearGradient(x+30, y-15, x+50, y+85);
+        gradient2.addColorStop(0, "#ff8c1a");
+        gradient2.addColorStop(0.25, "#b35900");
+        gradient2.addColorStop(1, "#0c3300");
+    
+        ctx.beginPath();
+        ctx.fillStyle = gradient2;
+        ctx.moveTo(x-40, y-30);
+        ctx.lineTo(x+120, y-30);
+        ctx.lineTo(y+120, y+100);
+        ctx.lineTo(x-40, y+100);
+        ctx.closePath();
+        ctx.fill();
+
         ctx.beginPath();
         ctx.fillStyle = "#336699";
         ctx.moveTo(x, y);
@@ -165,26 +181,35 @@ let logos = [
         ctx.closePath();
         ctx.fill();
 
+        let gradient = ctx.createLinearGradient(x+40, y-15, x+40, y+85);
+        gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+        gradient.addColorStop(1, "rgba(0, 0, 0, 127)");
+
         ctx.beginPath();
-        let grad = ctx.createLinearGradient(x+40, y+15, x+40, y+85);
-        grad.addColorStop(0, "rgba(0, 0, 0, 0)");
-        grad.addColorStop(1, "rgba(0, 0, 0, 255)");
+        ctx.fillStyle = gradient;
         ctx.moveTo(x, y);
         ctx.lineTo(x+40, y-15);
         ctx.lineTo(x+80, y);
         ctx.lineTo(x+80, y+70);
         ctx.lineTo(x+40, y+85);
         ctx.lineTo(x, y+70);
-        ctx.fillStyle = grad;
         ctx.closePath();
         ctx.fill();
+
+
+    },
+
+    //8 = Draw sprite 9 (text)
+    (x, y) => {
+        ctx.font = "24px gang-of-three";
+        ctx.fillText("Henlo, world!", x, y);
     }
 ]
 
 function draw() {
     console.log("Function was called");
 
-    logos[7](40, 40);
+    logos[8](40, 40);
     //logos[4](200, 20);
 
 }
