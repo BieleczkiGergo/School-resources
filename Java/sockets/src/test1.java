@@ -9,9 +9,29 @@ public class test1 {
     private DataOutputStream output = null;
 
     public test1(String address, int port){
-    try {
+        try {
+            socket = new Socket(address, port);
+            System.out.println("Connected");
 
-    }
+            input = new DataInputStream(System.in);
+            output = new DataOutputStream(socket.getOutputStream());
+
+        }catch (UnknownHostException u){
+            System.out.println(u);
+        }catch (IOException i){
+            System.out.println(i);
+        }
+
+        String line = "";
+
+        while(! line.equals("Over")){
+            try{
+                line = input.readLine();
+
+            }catch (IOException i){
+                System.out.println(i);
+            }
+        }
 
     }
 
