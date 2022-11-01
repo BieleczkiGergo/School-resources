@@ -10,6 +10,12 @@ colors:
 
 }
 
+p{
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+
 .main-title{
     font-size: 100px;
     color: azure;

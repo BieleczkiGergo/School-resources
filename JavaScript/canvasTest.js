@@ -79,11 +79,11 @@ let logos = [
     //Doesn't work
     (x, y) => {
         let img = new Image();
+        img.addEventListener('load', () => {
+            ctx.drawImage(img, x, y, 100, 100);
+
+        }, false);
         img.src = "naruto-uzumaki.svg";
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.drawImage(img, x, y, 100, 100);
-        ctx.closePath();
 
     },
 
@@ -209,7 +209,7 @@ let logos = [
 function draw() {
     console.log("Function was called");
 
-    logos[8](40, 40);
+    logos[4](40, 40);
     //logos[4](200, 20);
 
 }

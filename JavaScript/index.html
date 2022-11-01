@@ -20,6 +20,19 @@
         </canvas>
         <p class="canvas1-exc"></p>
         <button id="draw" onclick="draw()" class="navbutton">Draw</button>
+
+        <hr>
+
+        <h2 class="title">Bezier curve cutting</h2>
+        <canvas id="bezier-cut-canvas">
+
+        </canvas>
+        <p>Cut the bezier curve</p>
+        <input type="range" name="bCut" id="bezier-cut-range" oninput="bezierCutRefresh()" min="0" max="100" value="100">
+
+        <hr>
     </section>
+
+    <script src="functest.js"></script>
 </body>
 </html>
