@@ -20,7 +20,8 @@ public class Server
             System.out.println("Client accepted");
 
             in = new DataInputStream(
-                    new BufferedInputStream(socket.getInputStream()));
+                    new BufferedInputStream(socket.getInputStream())
+            );
 
             String line = "";
 
@@ -50,6 +51,7 @@ public class Server
 
     public static void main(String args[])
     {
-        Server server = new Server(5000);
+        Server server = new Server(5001);
+
     }
 }

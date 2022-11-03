@@ -18,8 +18,10 @@ public class Client {
 
         }catch (UnknownHostException u){
             System.out.println(u);
+
         }catch (IOException i){
             System.out.println(i);
+
         }
 
         String line = "";
@@ -48,6 +50,6 @@ public class Client {
     }
 
     public static void main(String[] args){
-        Client client = new Client("127.0.0.1", 5000);
+        Client client = new Client("127.0.0.1", 5001);
     }
 }
