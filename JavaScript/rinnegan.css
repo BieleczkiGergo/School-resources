@@ -10,7 +10,7 @@ colors:
 
 }
 
-p{
+p, label{
     font-size: large;
     font-weight: bold;
     color: white;

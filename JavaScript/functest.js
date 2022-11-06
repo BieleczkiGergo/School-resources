@@ -9,13 +9,17 @@ function setup(){
 
 function bezierCutRefresh(){
     let curve = [50, 50, 100, 125, 175, 25, 250, 50];
-    let value = parseInt( document.getElementById("bezier-cut-range").value ) / 100;
-
+    let front = parseInt( document.getElementById("bezier-cut-range-f").value ) / 100;
+    let back = 1- parseInt( document.getElementById("bezier-cut-range-b").value ) / 100;
+    //back = (1 / front) * back;
+    //front*back + (1-front)*back
     ctxCurve.fillStyle = "white";
     ctxCurve.fillRect(0, 0, 300, 150);
 
     
-    let temp = bezierSlice(...curve, value); 
+    let temp = bezierSlice(curve[0], curve[1], curve[2], curve[3], curve[4], curve[5], curve[6], curve[7], front);
+    temp = bezierSlice(temp[6], temp[7], temp[4], temp[5], temp[2], temp[3], temp[0], temp[1], back);
+
     markPoint(temp[0], temp[1]);
     markPoint(temp[2], temp[3]);
     markPoint(temp[4], temp[5]);

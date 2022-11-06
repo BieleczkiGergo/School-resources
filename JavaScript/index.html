@@ -28,7 +28,11 @@
 
         </canvas>
         <p>Cut the bezier curve</p>
-        <input type="range" name="bCut" id="bezier-cut-range" oninput="bezierCutRefresh()" min="0" max="100" value="100">
+        <input type="range" name="bCut-f" id="bezier-cut-range-f" oninput="bezierCutRefresh()" min="0" max="100" value="100">
+        <label>Cut from front</label>
+        <br>
+        <input type="range" name="bCut-b" id="bezier-cut-range-b" oninput="bezierCutRefresh()" min="0" max="100" value="100">
+        <label>Cut from back</label>
 
         <hr>
     </section>
