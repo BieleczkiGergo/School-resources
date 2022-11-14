@@ -7,6 +7,9 @@ public class Server
     private ServerSocket    server   = null;
     private DataInputStream in       =  null;
 
+    public byte buff[] = new byte[32];
+    public byte last = 0;
+
     public Server(int port)
     {
         try
@@ -23,9 +26,9 @@ public class Server
                     new BufferedInputStream(socket.getInputStream())
             );
 
-            String line = "";
+            //String line = "";
 
-            while (!line.equals("Over"))
+            /*while (!line.equals("Over"))
             {
                 try
                 {
@@ -37,7 +40,10 @@ public class Server
                 {
                     System.out.println(i);
                 }
-            }
+            }*/
+            in.read(buff, 0, 6);
+
+
             System.out.println("Closing connection");
 
             socket.close();
@@ -48,6 +54,7 @@ public class Server
             System.out.println(i);
         }
     }
+
 
     public static void main(String args[])
     {
