@@ -1,39 +1,63 @@
-laserCanvas = 0;
-ctxLaser = 0;
-gunPos = 30;
+class laser {
+    canvas = 0;
+    ctx = 0;
+    gunPos = 0;
+    objects = [
+        //0: pointer
+        [[15, 0], [10, 135], [5, 180], [10, 225]],
+        //1: square
+        [[15, 135], [15, 45], [15, 315], [15, 225]],
+    ];
+    activeObjects = [];
 
-laserObjects = [
-    //0: pointer
-    [[20, 0], [10, 135], [5, 180], [10, 225]],
-]
+    constructor (ID) {
+        this.canvas = document.getElementById(ID);
+        this.ctx = this.canvas.getContext("2d");
 
-function gameSetup(ID){
-    laserCanvas = document.getElementById(ID);
-    ctxLaser = laserCanvas.getContext("2d");
-    laserCanvas.addEventListener("keyboard", (event) =>{
-        if(event.key == "a") gunpos--;
-        if(event.key == "d") gunpos++;
-        reDrawLaser();
-    })
+        document.body.addEventListener("keydown", event =>{
+            if(event.key == "a") this.gunPos-=5;
+            if(event.key == "d") this.gunPos+=5;
+            if(event.key == "a" || event.key == "d"){
+                this.reDraw();
+            }
+        });
+        this.reDraw();
+    };
 
-    reDrawLaser();
+    //Redraw entire canvas
+
+    reDraw () {
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(0, 0, 750, 750);
+
+        this.drawObject(0, this.gunPos, 375, 375, 1, "#0047b3");
+        this.drawObject(1, 0, 30, 30);
+    };
+
+    drawObject (objectNum, tilt, sx, sy, size=1, fillStyle="white", strokeStyle="black", borderWidth=1) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(
+            sx+(Math.cos((this.objects[objectNum][0][1]+tilt)*Math.PI/180))*this.objects[objectNum][0][0]*size,
+            sy+(Math.sin((this.objects[objectNum][0][1]+tilt)*Math.PI/180))*this.objects[objectNum][0][0]*size
+        );
+
+        for(let i = 1; i < this.objects[objectNum].length; i++){
+            this.ctx.lineTo(
+                sx+(Math.cos((this.objects[objectNum][i][1]+tilt)*Math.PI/180))*this.objects[objectNum][i][0]*size,
+                sy+(Math.sin((this.objects[objectNum][i][1]+tilt)*Math.PI/180))*this.objects[objectNum][i][0]*size
+            );
+        }
+        this.ctx.closePath();
+        this.ctx.fillStyle = fillStyle;
+        this.ctx.strokeStyle = strokeStyle;
+        this.ctx.lineWidth = borderWidth;
+        this.ctx.fill();
+        this.ctx.stroke();
+    };
+
 }
 
-function reDrawLaser(){
-    drawObject(ctxLaser, gunPos, 0, 300, 300);
-}
-
-function drawObject(ctx, tilt, objectNum, sx, sy){
-    ctx.beginPath();
-    ctx.moveTo(sx, sy);
-    for(const i of laserObjects[objectNum]){
-        ctx.lineTo(sx+(Math.cos((i[0]+tilt)*180/Math.PI))*i[1], sy+(Math.sin((i[0]+tilt)*180/Math.PI))*i[1]);
-    }
-    ctx.closePath();
-    ctx.stroke();
-
-}
-
+/*
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
@@ -41,5 +65,5 @@ function getMousePos(canvas, evt) {
         y: evt.clientY - rect.top
     };
 }
-
-gameSetup("game1-canvas");
+*/
+laserGame = new laser("game1-canvas");
