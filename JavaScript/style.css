@@ -1,9 +1,66 @@
+@font-face {
+    font-family: gang-of-three;
+    src: url(gang-of-three.ttf);
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(27, 27, 126);
+
+}
+
+p, label{
+    font-size: large;
+    font-weight: bold;
+    color: white;
+
+}
+
+.main-title{
+    font-size: 100px;
+    color: azure;
+    text-align: center;
+    background-color: black;
+    
+}
+
+.title{
+    color: azure;
+    text-indent: 10%;
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+
+.main-content{
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+    display: block;
+    margin-left: 200px;
+    
+}
+
+header{
+    background-color: black;
+    border: none;
+    margin: 0px;
+
+}
+
 canvas{
     border: 2px solid white;
     display: block;
     margin-left: 20px;
     background-color: antiquewhite;
-
+    
 }
 
 .navbutton{
@@ -68,19 +125,9 @@ table#cleanup-host{
     background-color: white;
 
 }
-/*#canvas1{
-    width: 500px;
-    height: 300px;
-    
-}
+
 
 /**{
-    border: 1px solid white;
-
-}
-
-section{
-    border: 1px solid green;
+    background-color: rgba(0, 255, 0, 0.25) !important;
 
 }*/
-
