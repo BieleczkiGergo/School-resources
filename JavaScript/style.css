@@ -29,6 +29,43 @@ canvas{
     color: black;
     
 }
+
+table#cleanup{
+    padding: 0;
+    border: 2px dashed black;
+    background-color: cadetblue;
+
+}
+
+.cleanup-button{
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+
+}
+
+.cleanup-enabled{
+    background-color: greenyellow;
+
+
+}
+
+.cleanup-disabled{
+    background-color: red;
+
+}
+
+.cleanup-cell{
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+
+}
 /*#canvas1{
     width: 500px;
     height: 300px;
