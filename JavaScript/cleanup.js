@@ -48,4 +48,4 @@ class cleanup{
     };
 }
 
-let cleanupGame = new cleanup("cleanup-host", 7, 7);
+let cleanupGame = new cleanup("cleanup-host", 6, 6);
