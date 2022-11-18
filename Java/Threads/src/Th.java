@@ -8,7 +8,13 @@ public class Th extends Thread {
             System.out.println("Exception was caugth");
 
         }
+        System.out.println("Thread finished");
 
+    }
+
+    public int calculate(){
+
+        return 3;
     }
 
 

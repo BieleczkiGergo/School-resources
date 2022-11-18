@@ -8,6 +8,12 @@ class cleanup{
 
         this.house = document.getElementById(ID);
 
+        this.fillGrid();
+
+        
+    };
+
+    fillGrid(){
         for(let i=0; i < this.height; i++)
         {
             let row = this.house.insertRow(i);
@@ -15,37 +21,44 @@ class cleanup{
             {
                 let cell = row.insertCell(j);
                 cell.className = "cleanup-cell";
-
-                let btn = document.createElement("button");
-                btn.className = "cleanup-button " + (Math.random() > 0.5 ? "cleanup-enabled" : "cleanup-disabled");
-
-                btn.onclick = () => {
-                    [
-                        [i, j],
-                        [i-1, j],
-                        [i+1, j],
-                        [i, j-1],
-                        [i, j+1]
-
-                    ].forEach( (pos) => {
-                        if(pos[0] < 0 || pos[0] >= height || pos[1] < 0 || pos[1] >= width) return;
-
-                        let el = document.getElementById(ID).rows[pos[0]].cells[pos[1]].childNodes[0];
-
-                        if(el.className == "cleanup-button cleanup-enabled")
-                        {   
-                            el.className = "cleanup-button cleanup-disabled";
-
-                        }else
-                        {
-                            el.className = "cleanup-button cleanup-enabled";
-                        }
-                    })
-                }
+                
+                let btn = this.createButton(i, j, cell);
                 cell.appendChild(btn);
             }
         }
     };
+
+    createButton(x, y){
+        let btn = document.createElement("button");
+        btn.className = "cleanup-button " + (Math.random() > 0.5 ? "cleanup-enabled" : "cleanup-disabled");
+
+        btn.onclick = () => {
+            [
+                [x, y],
+                [x-1, y],
+                [x+1, y],
+                [x, y-1],
+                [x, y+1]
+
+            ].forEach( (pos) => {
+                if(pos[0] < 0 || pos[0] >= this.height || pos[1] < 0 || pos[1] >= this.width) return;
+
+                let el = this.house.rows[pos[0]].cells[pos[1]].childNodes[0];
+
+                if(el.className == "cleanup-button cleanup-enabled")
+                {   
+                    el.className = "cleanup-button cleanup-disabled";
+
+                }else
+                {
+                    el.className = "cleanup-button cleanup-enabled";
+                }
+            })
+        }
+        return btn;
+    }
+
+
 }
 
 let cleanupGame = new cleanup("cleanup-host", 6, 6);

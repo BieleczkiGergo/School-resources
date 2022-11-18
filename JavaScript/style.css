@@ -126,6 +126,11 @@ table#cleanup-host{
 
 }
 
+.menu-section-wrapper{
+    border: none;
+    border-bottom: 2px solid black;
+    
+}
 
 /**{
     background-color: rgba(0, 255, 0, 0.25) !important;
