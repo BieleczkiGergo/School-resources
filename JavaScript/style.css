@@ -17,6 +17,12 @@ body{
 
 }
 
+#bodyMid{
+    width: 100%;
+    position: relative;
+
+}
+
 p, label{
     font-size: large;
     font-weight: bold;
@@ -43,8 +49,7 @@ p, label{
 .main-content{
     border-left: 4px solid white;
     border-right: 4px solid white;
-    display: block;
-    margin-left: 200px;
+    display: inline-block;
     
 }
 
@@ -126,10 +131,46 @@ table#cleanup-host{
 
 }
 
+/*#menu-holder{
+    width: 15%;
+    height: 100%;
+    float: left;
+
+}*/
+
+#menubar{
+    width: 15%;
+    float: left;
+    display: inline-flexbox;
+    flex-direction: column;
+    top: 0%;
+}
+
 .menu-section-wrapper{
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 5px solid black;
+    overflow: auto;
+    padding: 2px;
+    padding-left: 10px;
     
+}
+
+.menu-icon{
+    width: 25px;
+    height: 25px;
+    float: left;
+    fill: white;
+
+}
+
+.menu-text{
+    color: white;
+    display: inline;
+    position: relative;
+    left: 10px;
+    font-size: 25px;
+    font-family: monospace;
+
 }
 
 /**{

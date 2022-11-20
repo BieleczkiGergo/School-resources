@@ -13,50 +13,53 @@
         <h1 class="main-title">JavaScript test site</h1>
 
     </header>
-    <div id="menubar">
-
+    <div id="bodyMid">
+        <div id="menubar">
+    
     </div>
-    <script src="siteBuild.js"></script>
-    <section class="main-content">
-        <h2 class="title">Canvas test</h2>
-        <script src="canvasTest.js" defer></script>
-        <canvas id="canvas1">
+        <script src="scripts/siteBuild.js"></script>
+        <section class="main-content">
+            <h2 class="title">Canvas test</h2>
+            <script src="scripts/canvasTest.js" defer></script>
+            <canvas id="canvas1">
+    
+            </canvas>
+            <p class="canvas1-exc"></p>
+            <button id="draw" onclick="draw()" class="navbutton">Draw</button>
+    
+            <hr>
+    
+            <h2 class="title">Bezier curve cutting algorithm</h2>
+            <canvas id="bezier-cut-canvas">
+    
+            </canvas>
+            <p>Cut the bezier curve</p>
+            <input type="range" name="bCut-f" id="bezier-cut-range-f" oninput="bezierCutRefresh()" min="0" max="100" value="100">
+            <label>Cut from front</label>
+            <br>
+            <input type="range" name="bCut-b" id="bezier-cut-range-b" oninput="bezierCutRefresh()" min="0" max="100" value="100">
+            <label>Cut from back</label>
+    
+            <hr>
+    
+            <h2 class="title">Laser game</h2>
+            <canvas id="game1-canvas" height="750" width="750">
+    
+            </canvas>
+            <script src="scripts/laser.js"></script>
+    
+            <hr>
+    
+            <h2 class="title">Clean up game</h2>
+            <table id="cleanup-host">
+    
+            </table>
+            <script src="scripts/cleanup.js"></script>
+            <hr>
+        </section>
+    </div>
+    
 
-        </canvas>
-        <p class="canvas1-exc"></p>
-        <button id="draw" onclick="draw()" class="navbutton">Draw</button>
-
-        <hr>
-
-        <h2 class="title">Bezier curve cutting algorithm</h2>
-        <canvas id="bezier-cut-canvas">
-
-        </canvas>
-        <p>Cut the bezier curve</p>
-        <input type="range" name="bCut-f" id="bezier-cut-range-f" oninput="bezierCutRefresh()" min="0" max="100" value="100">
-        <label>Cut from front</label>
-        <br>
-        <input type="range" name="bCut-b" id="bezier-cut-range-b" oninput="bezierCutRefresh()" min="0" max="100" value="100">
-        <label>Cut from back</label>
-
-        <hr>
-
-        <h2 class="title">Laser game</h2>
-        <canvas id="game1-canvas" height="750" width="750">
-
-        </canvas>
-        <script src="laser.js"></script>
-
-        <hr>
-
-        <h2 class="title">Clean up game</h2>
-        <table id="cleanup-host">
-
-        </table>
-        <script src="cleanup.js"></script>
-        <hr>
-    </section>
-
-    <script src="functest.js"></script>
+    <script src="scripts/functest.js"></script>
 </body>
 </html>
