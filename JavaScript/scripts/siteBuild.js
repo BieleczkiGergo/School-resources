@@ -14,10 +14,11 @@ function menuSect(src, dest, text) {
     icon.className = "menu-icon";
     wrapper.appendChild(icon);
 
-    let p = document.createElement("p");
-    p.innerHTML = text;
-    p.className = "menu-text";
-    wrapper.appendChild(p);
+    let a = document.createElement("a");
+    a.innerHTML = text;
+    a.className = "menu-text";
+    a.href = dest;
+    wrapper.appendChild(a);
 
     return wrapper;
 }
@@ -27,6 +28,10 @@ function createMenuElement(src, dest, text){
 
 }
 
+
+
 createMenuElement("pictures/controller.svg", "games.html", "games");
 createMenuElement("pictures/test_tube.svg", "experiment.html", "experiments");
 createMenuElement("pictures/pencil-brush.svg", "canvas.html", "canvas");
+createMenuElement("pictures/home.svg", "index.html", "home");
+createMenuElement("pictures/template.svg", "template.html", "template")

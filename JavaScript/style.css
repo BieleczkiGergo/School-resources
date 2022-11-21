@@ -50,7 +50,9 @@ p, label{
     border-left: 4px solid white;
     border-right: 4px solid white;
     display: inline-block;
-    
+    width: 85%;
+    box-sizing: border-box;
+
 }
 
 header{
