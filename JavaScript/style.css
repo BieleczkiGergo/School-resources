@@ -1,6 +1,6 @@
 @font-face {
     font-family: gang-of-three;
-    src: url(gang-of-three.ttf);
+    src: url(fonts/gang-of-three.ttf);
     
 }
 
@@ -52,6 +52,13 @@ p, label{
     display: inline-block;
     width: 85%;
     box-sizing: border-box;
+
+}
+
+.content{
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    overflow: auto;
 
 }
 
@@ -172,6 +179,7 @@ table#cleanup-host{
     left: 10px;
     font-size: 25px;
     font-family: monospace;
+    text-decoration: none;
 
 }
 

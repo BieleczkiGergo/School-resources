@@ -28,10 +28,15 @@ function createMenuElement(src, dest, text){
 
 }
 
+[
+    ["pictures/controller.svg", "games.html", "games"],
+    ["pictures/test_tube.svg", "experiment.html", "experiments"],
+    ["pictures/pencil-brush.svg", "canvas.html", "canvas"],
+    ["pictures/home.svg", "index.html", "home"],
+    ["pictures/DSA.svg", "dsa.html", "DSA"],
+    ["pictures/template.svg", "template.html", "template"],
+    
+].forEach(data => {
+    createMenuElement(data[0], data[1], data[2]);
 
-
-createMenuElement("pictures/controller.svg", "games.html", "games");
-createMenuElement("pictures/test_tube.svg", "experiment.html", "experiments");
-createMenuElement("pictures/pencil-brush.svg", "canvas.html", "canvas");
-createMenuElement("pictures/home.svg", "index.html", "home");
-createMenuElement("pictures/template.svg", "template.html", "template")
+});

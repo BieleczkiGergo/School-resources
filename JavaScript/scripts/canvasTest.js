@@ -83,7 +83,7 @@ let logos = [
             ctx.drawImage(img, x, y, 100, 100);
 
         }, false);
-        img.src = "naruto-uzumaki.svg";
+        img.src = "pictures/naruto-uzumaki.svg";
 
     },
 
@@ -207,8 +207,6 @@ let logos = [
 ]
 
 function draw() {
-    console.log("Function was called");
-
     logos[4](40, 40);
     //logos[4](200, 20);
 

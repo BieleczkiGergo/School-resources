@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1 class="main-title">Template site</h1>
+        <h1 class="main-title">Games</h1>
     </header>
     <div id="bodyMid">
         <div id="menubar">
@@ -32,6 +32,97 @@
             </table>
             <script src="scripts/cleanup.js"></script>
             <hr>
+
+            <div class="content">
+                <h2 class="title">Enchanting table game</h2>
+                <style>
+                    @font-face {
+                        font-family: enchantTable;
+                        src: url(fonts/EnchantingTable.ttf);
+
+                    }
+
+                    @font-face {
+                        font-family: Monocraft;
+                        src: url(fonts/Monocraft.otf);
+                    }
+
+                    #enchant-example{
+                        background-color: rgb(65, 114, 114);
+                        color: black;
+                        width: 200px;
+                        height: 200px;
+                        font-size: 150px;
+                        text-align: center;
+                        padding: 50px;
+                        margin-left: 5%;
+                        float: left;
+                        /*
+                        display: inline-block;
+                        */
+
+                    }
+
+                    .enchantFont{
+                        font-family: enchantTable, Monocraft !important;
+
+                    }
+
+                    .enchantCard{
+                        background-color: rgb(65, 114, 114);
+                        color: black;
+                        text-align: center;
+                        height: 50px;
+                        width: 50px;
+                        font-family: Monocraft;
+                        font-size: 40px;
+                    }
+
+                    .enchantCorrect{
+                        background-color: green;
+                    }
+
+                    .enchantWrong{
+                        background-color: brown;
+                    }
+
+                    #enchant-options{
+                        float: left;
+                        /*
+                        display: inline-block;
+                        */
+
+                    }
+
+                    .enchantbtn{
+                        display: block;
+                        background-color: #6f6f6f;
+                        padding: 5px;
+                        border-color: #AAA #565656 #565656 #AAA;
+                        text-shadow: 3px 3px rgba(76, 76, 76, 0.2);
+                        outline: 2px solid #000;
+
+                    }
+
+                    #enchantbtnHolder{
+                        border: none;
+                        width: fit-content;
+                        position: relative;
+                        left: 20px;
+
+                    }
+
+                </style>
+                <p class="" id="enchant-example"></p>
+                <table id="enchant-options">
+                
+                </table>
+                <fieldset id="enchantbtnHolder">
+                    <button id="enchantReset" class="enchantbtn">Reset</button>
+                    <button id="enchantFlipMode" class="enchantbtn">Flip mode</button>
+                </fieldset>
+                <script src="scripts/enchant.js"></script>
+            </div>
         </section>
     </div>
 </body>
