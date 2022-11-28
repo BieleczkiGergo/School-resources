@@ -12,6 +12,13 @@ public class Main{
         }
         System.out.println(obj.calculate());
 
+        Test1 t = new Test1(){
+            @Override
+            public int num() {
+                return 6;
+            }
+        };
+        System.out.println("" + t.num());
         /*
         System.out.println("Runnables");
 
