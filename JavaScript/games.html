@@ -34,7 +34,8 @@
             <hr>
 
             <div class="content">
-                <h2 class="title">Enchanting table game</h2>
+                <h2 class="title">Enchanting table guessing</h2>
+                <br>
                 <style>
                     @font-face {
                         font-family: enchantTable;
@@ -65,6 +66,8 @@
 
                     .enchantFont{
                         font-family: enchantTable, Monocraft !important;
+                        letter-spacing: 5px;
+                        font-size: 200%;
 
                     }
 
@@ -112,6 +115,34 @@
 
                     }
 
+                    #enchant2-in{
+                        font-size: 200%;
+                        letter-spacing: 5px;
+                        border: 5px solid white;
+                        border-top: none;
+                        border-bottom: none;
+                        border-radius: 10px;
+                        background-color: rgb(43, 43, 161);
+                        color: white;
+                        position: relative;
+                        left: 10px;
+
+                    }
+
+                    #enchant2-sample{
+                        position: relative;
+                        left: 10px;
+                        width: 90%;
+                    }
+
+                    .correct{
+                        border-bottom: 5px solid green;
+                    }
+
+                    .wrong{
+                        border-bottom: 5px solid red;
+                    }
+
                 </style>
                 <p class="" id="enchant-example"></p>
                 <table id="enchant-options">
@@ -125,11 +156,16 @@
             </div>
             <div class="content">
                 <h2 class="title">Enchanting table typing</h2>
+                <br>
                 <p class="enchantFont" id="enchant2-sample"></p>
-                <input type="text" name="enchant2-in" id="enchant2-in">
+                <input type="text" name="enchant2-in" id="enchant2-in" oninput="enchantType.validate()">
+                <br>
+                <br>
                 <script src="scripts/enchant.js"></script>
             </div>
         </section>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     </div>
 </body>
 </html>

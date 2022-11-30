@@ -91,20 +91,46 @@ class enchant2{
     len = 20;
     house = 0;
     input = 0;
-    chars = "";
+    targetStr = "";
     constructor(house){
-        this.house = document.getElementById(house + "-sample");
-        this.input = document.getElementById(house + "-in");
+        this.house = document.getElementById(house + "-in");
+        this.input = document.getElementById(house + "-sample");
+        
         this.fillChars();
 
     }
 
+    setBack(){
+        this.input.className = "";
+    }
+
+    validate(){
+        console.log("Event was called");
+            if(this.targetStr.includes(this.input.value)){
+                this.input.className = "correct";
+                setTimeout(this.setBack, 200);
+
+            }else{
+                while(!this.targetStr.includes(this.input.value)){
+                    let val = String(this.input.value);
+                    this.input.value = val.substring(0, val.length-2);
+
+                }
+                this.input.className = "wrong";
+                setTimeout(this.setBack, 200);
+
+            }
+    }
+
     fillChars(){
         for(let i=0; i<this.len; i++){
-            chars += charset[random()*this.charset.length];
+            this.targetStr += this.charset.charAt(
+                Math.random()*this.charset.length
+            );
 
         }
-        this.input.innerText = this.chars;
+        console.log(this.targetStr);
+        this.input.innerHTML = this.targetStr;
     }
 
 }
