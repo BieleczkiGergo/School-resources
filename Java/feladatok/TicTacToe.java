@@ -17,7 +17,7 @@ class TicTacToe{
             System.out.println("");
             for(int i=0; i<3; i++){
                 for(int j=0; j<3; j++){
-                    System.out.print(" " + grid[i][j] + (j != 2 ? " |" : " "));                 
+                    System.out.print(" " + (grid[i][j] != ' ' ? grid[i][j] : String.valueOf(i*3+j+1)) + (j != 2 ? " |" : " "));
 
                 }
                 if(i != 2) System.out.println("\n---+---+---");

@@ -1,4 +1,4 @@
-class enchant{
+class enchant1{
     charset = "abcdefghijklmnopqrstuvxyz";
     rows = 5;
     cols = 5;
@@ -86,4 +86,28 @@ class enchant{
 
 }
 
-let enchantGame = new enchant("enchant-options", "enchant-example", "enchantReset", "enchantFlipMode");
+class enchant2{
+    charset = "abcdefghijklmnopqrstuvxyz";
+    len = 20;
+    house = 0;
+    input = 0;
+    chars = "";
+    constructor(house){
+        this.house = document.getElementById(house + "-sample");
+        this.input = document.getElementById(house + "-in");
+        this.fillChars();
+
+    }
+
+    fillChars(){
+        for(let i=0; i<this.len; i++){
+            chars += charset[random()*this.charset.length];
+
+        }
+        this.input.innerText = this.chars;
+    }
+
+}
+
+let enchantGame = new enchant1("enchant-options", "enchant-example", "enchantReset", "enchantFlipMode");
+let enchantType = new enchant2("enchant2");
