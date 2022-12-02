@@ -3,14 +3,17 @@ import java.util.Scanner;
 
 //Bolondbiztosság is szempont volt
 class TicTacToe{
+    static char[][] grid = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+    static boolean run = false;
+    static boolean next = true;
+    static boolean win = false;
+    static boolean AI = true;
+    static Scanner choice = new Scanner(System.in);
+    static byte steps = 0;
+    static int num = 0;
 
     public static void main(String[] args) {
-        char[][] grid = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
-        boolean run = false;
-        boolean next = true;
-        boolean win = false;
-        Scanner choice = new Scanner(System.in);
-        byte steps = 0;
+
 
         while(!run){
             //Kirajzolja a táblát
@@ -40,7 +43,6 @@ class TicTacToe{
             }
 
             //Ha nyert, megkérdezi akarunk-e újat
-            int num;
             if(steps == 9 || win){
                 if(win) System.out.println("\n" + (next ? "2" : "1") + ". játékos nyert");
                 else System.out.println("Senki se nyert!");
@@ -70,8 +72,12 @@ class TicTacToe{
                 boolean t1 = true;
                 while(t1){
                     System.out.print("\n" + (next ? "1" : "2") + ". játékos következik(1-9):");
-                    num = choice.nextInt()-1;
+
+                    if(!next && AI) choose();
+                    else  num = choice.nextInt()-1;
+
                     if(num>=0 && num <=8 && grid[num/3][num%3] == ' '){
+
                         grid[num/3][num%3] = (next ? 'X' : 'O');
                         next = !next;
                         steps++;
@@ -87,5 +93,16 @@ class TicTacToe{
         }
         
         choice.close();
+    }
+
+    //AI starts here
+    public static void choose(){
+        boolean found = false;
+
+
+        /*
+        for(num=0; grid[num/3][num%3] != ' ' ;num++);
+        */
+        System.out.println("Number chosen: " + (num+1));
     }
 }
