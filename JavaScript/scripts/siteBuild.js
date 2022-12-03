@@ -1,22 +1,32 @@
 let siteBuild = {
     imgWidth : 30,
     imgHeight : 30,
-    wrapper : document.getElementById("menubar"),
+    wrapper : document.getElementById("menuBar"),
+
+}
+
+let menuVisible = false;
+
+function menuToggle(){
+    console.log("function was called");
+    let menu = document.getElementById("menuWrapper");
+    menu.style.display = (menuVisible ? "" : "none");
+    menuVisible = !menuVisible;
 
 }
 
 function menuSect(src, dest, text) {
-    let wrapper = document.createElement("div");
-    wrapper.className = "menu-section-wrapper";
+    let wrapper = document.createElement("li");
+    wrapper.className = "menu-section-wrapper menu";
 
     let icon = new Image();
     icon.src = src;
-    icon.className = "menu-icon";
+    icon.className = "menu-icon menu";
     wrapper.appendChild(icon);
 
     let a = document.createElement("a");
     a.innerHTML = text;
-    a.className = "menu-text";
+    a.className = "menu-text menu";
     a.href = dest;
     wrapper.appendChild(a);
 

@@ -28,6 +28,8 @@ header{
     font-size: 200%;
     font-weight: bold;
     text-align: center;
+    width: 100%;
+    position: relative;
 
 }
 
@@ -56,11 +58,66 @@ header{
     color: white;
     text-align: justify;
     padding: 15px;
+    position: relative;
+    
 }
 
 .main-content section{
     border: none;
     border-bottom: 2px solid white;
     padding-bottom: 20px;
+
+}
+
+.menu{
+    position: relative;
+    z-index: 2;
+
+}
+
+#menuWrapper{
+    border: 2px solid #074b6bbd;
+    background-color: #0a0516a8;
+    padding-left: 15px;
+    overflow: hidden;
+    /*border: 3px solid rgba(red, green, blue, alpha);
+    */
+}
+
+#menuBar{
+    overflow: auto;
+    list-style-type: none;
+
+}
+
+#menuBar li:first-child{
+    font-size: 200%;
+
+}
+
+.menu-section-wrapper{
+    border-bottom: 2px solid white;
+
+}
+
+.menu-icon{
+    width: 10%;
+    fill: white;
+    
+}
+
+.menu-text{
+    text-decoration: none;
+    color: white;
+    font-size: 200%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    overflow: auto;
+
+}
+
+button{
+    position: relative;
 
 }

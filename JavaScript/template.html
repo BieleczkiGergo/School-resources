@@ -12,16 +12,26 @@
     <header>
         <h1 class="main-title">Template site</h1>
         <ul class="menuLine">
-            <li><img src="pictures/menu.svg" alt="Menu"></li>
+            <li><img src="pictures/menu.svg" alt="Menu" onclick="menuToggle()"></li>
         </ul>
     </header>
+    <div id="menuWrapper" class="menu">
+        <ul id="menuBar" class="menu">
+            <li class="menu menu-section-wrapper"><img src="pictures/closeButton.svg" alt="Close button" class="menu menu-icon" onclick="menuToggle()"><a class="menu menu-text">Close</a></li>
+        </ul>
+
+    </div>
     <div class="main-content">
         <section>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolorem omnis
             optio eos. Corrupti illum, quod vitae laudantium quasi officia aperiam itaque, 
             dolorum minus dolores commodi ex voluptatibus odio placeat?
-
+            
         </section>
     </div>
+    
+    <button onclick="menuToggle()">Hide/Show menu</button>
+    
+    <script src="scripts/siteBuild.js"></script>
 </body>
 </html>
