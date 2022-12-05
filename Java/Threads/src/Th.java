@@ -8,7 +8,11 @@ public class Th extends Thread {
             System.out.println("Exception was caugth");
 
         }
-        System.out.println("Thread finished");
+        try{
+            Thread.sleep(1000);
+        }catch(InterruptedException e){
+            System.out.println("Secondary thread was interrupted");
+        }
 
     }
 

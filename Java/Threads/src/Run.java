@@ -8,5 +8,12 @@ public class Run implements Runnable {
             System.out.println("Exception was caugth");
 
         }
+        try {
+            wait(1000);
+        }catch (InterruptedException e){
+            System.out.println("Thread interrupted:\n" + e);
+
+        }
+
     }
 }
