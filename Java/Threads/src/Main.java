@@ -10,16 +10,6 @@ public class Main{
             System.out.println("What even happened");
         }
         obj.interrupt();
-
-        Thread run = new Thread(new Run());
-        run.start();
-        try{
-            Thread.sleep(50);
-        }catch(Exception e){
-            System.out.println("What even happened");
-
-        }
-        System.out.println(run.isAlive());
-        run.interrupt();
+        //Runnable object are not interruptable
     }
 }
