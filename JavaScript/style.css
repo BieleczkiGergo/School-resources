@@ -63,6 +63,7 @@ header{
     text-align: justify;
     padding: 15px;
     position: relative;
+    overflow: hidden;
     
 }
 
@@ -71,6 +72,7 @@ header{
     border-bottom: 2px solid white;
     padding-bottom: 20px;
     z-index: inherit;
+    overflow: auto;
 
 }
 

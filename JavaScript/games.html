@@ -11,30 +11,61 @@
 <body>
     <header>
         <h1 class="main-title">Games</h1>
+        <ul class="menuLine">
+            <li><img src="pictures/menu.svg" alt="Menu" onclick="menuToggle()"></li>
+        </ul>
     </header>
-    <div id="bodyMid">
-        <div id="menubar">
+    <div id="menuWrapper" class="menu">
+        <ul id="menuBar" class="menu">
+            
+        </ul>
 
-        </div>
-        <script src="scripts/siteBuild.js"></script>
-        <section class="main-content">
+    </div>
+    <div class="main-content">
+        <section>
             <h2 class="title">Laser game</h2>
             <canvas id="game1-canvas" height="750" width="750">
     
             </canvas>
             <script src="scripts/laser.js"></script>
-    
-            <hr>
-    
+        </section>
+
+        <section>
             <h2 class="title">Clean up game</h2>
+            <style>
+                table#cleanup-host{
+                    background-color: transparent;
+
+                }
+
+                .cleanup-button{
+                    width: 50px;
+                    height: 50px;
+                    margin: 2px;
+                    padding: 0%;
+                    border: 3px solid white;
+
+                }
+
+                .cleanup-enabled{
+                    background-color: green;
+
+                }
+
+                .cleanup-disabled{
+                    background-color: red;
+
+                }
+            </style>
             <table id="cleanup-host">
     
             </table>
             <script src="scripts/cleanup.js"></script>
-            <hr>
+        </section>
 
-            <div class="content">
-                <h2 class="title">Enchanting table guessing</h2>
+        <section>
+            <!--Enchant table guessing game-->
+            <h2 class="title">Enchanting table guessing</h2>
                 <br>
                 <style>
                     @font-face {
@@ -152,20 +183,20 @@
                     <button id="enchantReset" class="enchantbtn">Reset</button>
                     <button id="enchantFlipMode" class="enchantbtn">Flip mode</button>
                 </fieldset>
-                
-            </div>
-            <div class="content">
-                <h2 class="title">Enchanting table typing</h2>
+        </section>
+            <!--Enchant table typing game-->
+            <h2 class="title">Enchanting table typing</h2>
                 <br>
                 <p class="enchantFont" id="enchant2-sample"></p>
                 <input type="text" name="enchant2-in" id="enchant2-in" oninput="enchantType.validate()">
                 <br>
                 <br>
                 <script src="scripts/enchant.js"></script>
-            </div>
-        </section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <section>
 
+        </section>
     </div>
+    
+    <script src="scripts/siteBuild.js"></script>
 </body>
 </html>
