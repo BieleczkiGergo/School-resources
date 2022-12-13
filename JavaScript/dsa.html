@@ -23,11 +23,23 @@
     </div>
     <div class="main-content">
         <section>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolorem omnis
-            optio eos. Corrupti illum, quod vitae laudantium quasi officia aperiam itaque, 
-            dolorum minus dolores commodi ex voluptatibus odio placeat?
+            <style>
+                #knTree-canvas{
+                    background-color: white;
+
+                }
+            </style>
+            <h2>k-n tree test</h2>
+            <canvas id="knTree-canvas">
+
+            </canvas>
+            <input type="range" name="knTree-X" id="knTree-X" oninput="knTree.setPoint()">
+            <input type="range" name="knTree-Y" id="knTree-Y" oninput="knTree.setPoint()">
+            <button id="genPoints" onclick="knTree.genPoints()">Generate points</button>
+            <p id="knTree-closest"></p>
             
         </section>
+        <script src="scripts/DSA.js"></script>
     </div>
     
     <script src="scripts/siteBuild.js"></script>
