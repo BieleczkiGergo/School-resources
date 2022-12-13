@@ -9,7 +9,8 @@ public class Main{
         }catch(InterruptedException e){
             System.out.println("What even happened");
         }
+        System.out.println(Thread.currentThread());
         obj.interrupt();
-        //Runnable object are not interruptable
+        //Runnable objects are not interruptable
     }
 }
