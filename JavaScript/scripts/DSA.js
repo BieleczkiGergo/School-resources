@@ -8,7 +8,7 @@ let knTree = {
     pointRange : [0, 300, 0, 150],
     points : [],
     cursor : [0, 0],
-    pointSize : 2,
+    pointSize : 5,
 
     canvas : 0,
     ctx : 0,
@@ -17,7 +17,8 @@ let knTree = {
 
     setup(){
         this.canvas = document.getElementById("knTree-canvas");
-        ctx = this.canvas.getContext("2d");
+        this.ctx = this.canvas.getContext("2d");
+        this.genPoints();
 
     },
 
@@ -31,15 +32,16 @@ let knTree = {
     genPoints(){
         this.points = [];
         for(let i=0; i<this.pointC; i++){
-            this.points.append([Math.random()*this.pointRange[1] +this.pointRange[0], Math.random()*this.pointRange[3] +this.pointRange[2]]);
+            this.points.push([Math.random()*this.pointRange[1] +this.pointRange[0], Math.random()*this.pointRange[3] +this.pointRange[2]]);
 
         }
 
+        this.reDraw();
     },
 
     reDraw(){
-        console.log("function called");
-
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(0, 0, 300, 150);
         this.ctx.fillStyle = "blue";
         this.ctx.fillRect(this.cursor[0], this.cursor[1], this.pointSize, this.pointSize);
 

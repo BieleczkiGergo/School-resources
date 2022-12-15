@@ -33,9 +33,10 @@
             <canvas id="knTree-canvas">
 
             </canvas>
-            <input type="range" name="knTree-X" id="knTree-X" oninput="knTree.setPoint()">
-            <input type="range" name="knTree-Y" id="knTree-Y" oninput="knTree.setPoint()">
+            <input type="range" name="knTree-X" id="knTree-X" oninput="knTree.setPoint()" min="0" max="300">
+            <input type="range" name="knTree-Y" id="knTree-Y" oninput="knTree.setPoint()" min="0" max="150">
             <button id="genPoints" onclick="knTree.genPoints()">Generate points</button>
+            <button id="knTree-search" onclick="knTree.search()">Search closest point</button>
             <p id="knTree-closest"></p>
             
         </section>
