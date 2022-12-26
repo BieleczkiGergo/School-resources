@@ -159,7 +159,12 @@ button{
         z-index: 0;
         width: 70%;
         position: relative;
-        overflow: scroll;
+        overflow-y: scroll;
 
     }
+}
+
+canvas{
+    background-color: white;
+
 }

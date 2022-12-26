@@ -1,4 +1,6 @@
-
+function radians(deg){
+    return deg*Math.PI/180;
+}
 
 let canvas = document.getElementById("canvas1");
 if(canvas.getContext){
@@ -210,4 +212,57 @@ function draw() {
     logos[4](40, 40);
     //logos[4](200, 20);
 
+}
+
+let BRANCHES = 8;
+let CURVE = 14;
+let TreeCanvas = document.getElementById("treeCanvas");
+let Treectx = TreeCanvas.getContext("2d");
+
+function colorPipe(n){
+    function mixColors(a, b, t){
+        return [
+            a[0]*(1-t) + b[0]*t,
+            a[1]*(1-t) + b[1]*t,
+            a[2]*(1-t) + b[2]*t
+        ]
+    }
+    let color = mixColors([00, 00, 153], [204, 00, 255], n/BRANCHES);
+    color = Math.round(color[0]).toString(16).padStart(2, 0) +
+            Math.round(color[1]).toString(16).padStart(2, 0) +
+            Math.round(color[2]).toString(16).padStart(2, 0);
+    console.log(color);
+
+    return "#" + color;
+}
+
+function drawTree(){
+    for(let t=0; t < (Math.pow(2, BRANCHES)); t++)
+    {
+        let pos = [300, 200];
+        for(let i=0; i<BRANCHES; i++)
+        {
+            Treectx.beginPath();
+            Treectx.moveTo(pos[0], pos[1]);
+            Treectx.strokeStyle = colorPipe(i);
+            Treectx.lineWidth = 3;
+
+            let size = 30;
+            let angle = 90 - (i*CURVE);
+
+            pos[0] +=
+                size *
+                Math.cos(radians(angle)) *
+                ( t&Math.pow(2, i) ? -1 : 1 );
+            pos[1] -=
+                size *
+                Math.sin(radians(angle));
+            
+
+            Treectx.lineTo(pos[0], pos[1]);
+            Treectx.stroke();
+            Treectx.closePath();
+        }
+        
+    }
 }
