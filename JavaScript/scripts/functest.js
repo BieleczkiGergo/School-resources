@@ -84,3 +84,40 @@ function Phrog(type){
 frog = new Phrog("Red");
 console.log(typeof(frog));
 console.log(frog.type);
+
+let a = 1
+let b = 2
+let myPromise = new Promise((resolve, reject) => {
+    if(a+b == 3){
+        resolve("Resolved");
+
+    }else{
+        reject("Rejected");
+
+    }
+})
+
+let myPromise2 = myPromise.then(text => {
+    console.log(text);
+    return "String of success";
+
+}, text => {
+    console.log(text);
+    throw new Error("oops");
+
+})
+
+myPromise2.then( text => {
+    console.log("2nd promise resolved | " + text);
+
+}).catch( text => {
+    console.log("2nd promise rejected | " + text);
+
+})
+
+let promises = [myPromise, myPromise2]
+Promise.all(promises).then(() =>{
+    console.log("All promises were resolved")
+}, () =>{
+    console.log("At least one promise was rejected")
+})
