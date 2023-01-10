@@ -121,3 +121,35 @@ Promise.all(promises).then(() =>{
 }, () =>{
     console.log("At least one promise was rejected")
 })
+
+function* collatz(val=0){
+    while(val != 2){
+
+        yield val;
+
+        if(val%2 == 1){
+            val = (3*val) +1;
+
+        }else{
+            val /= 2;
+
+        }
+
+    }
+    return val;
+}
+
+let i = 0;
+
+function getCollatz(x){
+    i=0;
+    for (const num of collatz(x)){
+        console.log(i + ": " + num);
+        i++;
+    
+    }
+    i++;
+    console.log("Finished in " + i + " steps");
+
+    return i;
+}
