@@ -2,27 +2,18 @@ import java.util.Scanner;
 
 public class Main{
 
+    static int thNo = 2;
     public static void main(String[] args) {
+        VolData volData = new VolData();
+        Thread[] threads  = new Thread[thNo];
+        for(int i=0; i<thNo; i++)
+            threads[i] = new VolThread(volData);
 
-        /*Th obj = new Th();
-        obj.start();
-        try{
-            Thread.sleep(50);
-        }catch(InterruptedException e){
-            System.out.println("What even happened");
-        }
-        System.out.println(Thread.currentThread());
-        obj.interrupt();
+        for(int i=0; i<thNo; i++)
+            threads[i].start();
 
-        Thread run = new Thread(new Run(), "Valami");
-        run.start();*/
-        Scanner input = new Scanner(System.in);
-        int a = 15;
-        int b = 12;
-        System.out.println("The two numbers are: " + a + " and " + b);
-        System.out.println("GCD is: " + gcd(a, b));
-
-
+        for(int i=0; i<thNo; i++)
+            threads[i].join();
     }
 
     public static int gcd(int a, int b){
